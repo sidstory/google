@@ -12,7 +12,7 @@ module.exports = (req, res) => {
   //   ) {
   //     target = "http://106.15.2.32:6969";
   //   }
-  req.setHeader("x-real-ip",'34.200.227.202');
+ 
   // 创建代理对象并转发请求
   createProxyMiddleware({
     target,
