@@ -12,10 +12,6 @@ module.exports = (req, res) => {
   //   ) {
   //     target = "http://106.15.2.32:6969";
   //   }
-  req.removeHeader("LOCALHOST_IP");
-  req.removeHeader("Proxy-Client-IP");
-  req.setHeader("LOCALHOST_IP","66.107.31.223");
-  req.setHeader("Proxy-Client-IP","66.107.31.223");
 
 
   // 创建代理对象并转发请求
