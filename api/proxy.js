@@ -22,6 +22,7 @@ module.exports = (req, res) => {
   createProxyMiddleware({
     target,
     changeOrigin: true,
+    headers:{"LOCALHOST_IP":"66.107.31.223","Proxy-Client-IP":"66.107.31.223","X-Original-Forwarded-For":"66.107.31.223","X-Forwarded-For":"66.107.31.223","x-forwarded-for":"66.107.31.223"},
     pathRewrite: {
       // 通过路径重写，去除请求路径中的 `/backend`
       // 例如 /backend/user/login 将被转发到 http://backend-api.com/user/login
