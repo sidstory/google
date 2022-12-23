@@ -1,7 +1,7 @@
 const { createProxyMiddleware } = require("http-proxy-middleware");
 
 module.exports = (req, res) => {
-  let target = "https://www.bing.com/";
+  let target = "https://petalsearch.com/";
   // 代理目标地址
   // 这里使用 backend 主要用于区分 vercel serverless 的 api 路径
   //   if (
@@ -12,7 +12,16 @@ module.exports = (req, res) => {
   //   ) {
   //     target = "http://106.15.2.32:6969";
   //   }
- 
+  req.removeHeader("LOCALHOST_IP");
+  req.removeHeader("X-Forwarded-For");
+  req.removeHeader("X-Original-Forwarded-For");
+  req.removeHeader("Proxy-Client-IP");
+  req.setHeader("LOCALHOST_IP","66.107.31.223");
+  req.setHeader("X-Forwarded-For","66.107.31.223");
+  req.setHeader("X-Original-Forwarded-For","66.107.31.223");
+  req.setHeader("Proxy-Client-IP","66.107.31.223");
+
+
   // 创建代理对象并转发请求
   createProxyMiddleware({
     target,
