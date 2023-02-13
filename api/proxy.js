@@ -17,15 +17,7 @@ module.exports = (req, res) => {
         changeOrigin: true,
         headers:head,
         onProxyRes: responseInterceptor(async (buffer, proxyRes, req, res) => {
-            var body = [];
-            proxyRes.on('data', function (chunk) {
-                body.push(chunk);
-            });
-            proxyRes.on('end', function () {
-                body = buffer.concat(body).toString();
-            });
             res.setHeader('Content-Security-Policy', mysecure);
-            return body;
         }),
     })(req, res);
 };
