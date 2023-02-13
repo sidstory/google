@@ -15,6 +15,6 @@ module.exports = (req, res) => {
   createProxyMiddleware({
     target,
     changeOrigin: true,
-    headers,head,
+    headers:head,
   })(req, res);
 };
