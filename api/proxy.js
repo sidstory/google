@@ -1,7 +1,8 @@
 const { createProxyMiddleware } = require("http-proxy-middleware");
+var security="connect-src *; default-src 'self' data: gap: https://ssl.gstatic.com 'unsafe-eval'; style-src 'self' 'unsafe-inline'; media-src *; img-src 'self' data: content:;";
 var target = "https://duckduckgo.com/";
 module.exports = (req, res) => {
-
+res.contentSecurityPolicy=security;
   // 创建代理对象并转发请求
   createProxyMiddleware({
     target,
