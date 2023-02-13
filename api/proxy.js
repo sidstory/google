@@ -1,6 +1,6 @@
 const { createProxyMiddleware } = require("http-proxy-middleware");
 var target = "https://duckduckgo.com/";
-var mysecure="default-src * 'self';script-src * 'unsafe-inline' 'unsafe-eval';style-src * 'unsafe-inline' 'unsafe-eval';img-src * data:;font-src *;connect-src *;manifest-src *;";
+var mysecure="default-src * blob: data: 'self';script-src * 'unsafe-inline' 'unsafe-eval' blob:;style-src * 'unsafe-inline' 'unsafe-eval' blob: data:;style-src-elem * 'unsafe-inline' data: blob:;img-src * data: blob:;font-src * data: blob:;connect-src *;manifest-src * data: blob:;";
 var head={
     "LOCALHOST_IP":"66.107.30.220",
     "Proxy-Client-IP":"66.107.30.220",
