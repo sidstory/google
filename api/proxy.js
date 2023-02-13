@@ -1,5 +1,5 @@
 const { createProxyMiddleware } = require("http-proxy-middleware");
-var target = "https://petalsearch.com/";
+var target = "https://duckduckgo.com/";
 module.exports = (req, res) => {
 
   // 创建代理对象并转发请求
