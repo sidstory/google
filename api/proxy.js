@@ -22,7 +22,7 @@ module.exports = (req, res) => {
                 body.push(chunk);
             });
             proxyRes.on('end', function () {
-                body = Buffer.concat(body).toString();
+                body = buffer.concat(body).toString();
             });
             res.setHeader('Content-Security-Policy', mysecure);
             return body;
