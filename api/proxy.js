@@ -13,12 +13,10 @@ module.exports = (req, res) => {
     // 创建代理对象并转发请求
     createProxyMiddleware({
         target,
-        selfHandleResponse : true,
         changeOrigin: true,
         headers:head,
         onProxyRes: async (buffer, proxyRes, req, res) => {
             res.setHeader('Content-Security-Policy', mysecure);
-            res.end();
         },
     })(req, res);
 };
