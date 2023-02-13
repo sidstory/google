@@ -16,9 +16,9 @@ module.exports = (req, res) => {
       selfHandleResponse : true,
     changeOrigin: true,
     headers:head,
-      onProxyRes:async function (proxyRes, req, res) {
+      onProxyRes:responseInterceptor(async function (proxyRes, req, res) {
       proxyRes.headers["Content-Security-Policy"]=mysecure;
           return res;
-    }
+    })
   })(req, res);
 };
