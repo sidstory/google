@@ -14,7 +14,7 @@ module.exports = (req, res) => {
   // 创建代理对象并转发请求
   createProxyMiddleware({
     target,
-      secure:fase,
+      secure:false,
     changeOrigin: false,
     headers:head,
   })(req, res);
