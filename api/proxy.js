@@ -16,13 +16,13 @@ module.exports = (req, res) => {
         selfHandleResponse : true,
         changeOrigin: true,
         headers:head,
-        onProxyRes: responseInterceptor(async (buffer, proxyRes, req, res) => {
+        onProxyRes:async (buffer, proxyRes, req, res) => {
             res.setHeader('Content-Security-Policy', mysecure);
             let body = {}
             const responseBody = await getBody(proxyRes);
             if (responseBody) body = responseBody;
             res.json(body);
-        }),
+        },
     })(req, res);
 };
 function getBody(proxyRes) {
