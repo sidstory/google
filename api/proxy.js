@@ -10,12 +10,15 @@ var head={
     "Referer":"66.107.30.220",
 };
 module.exports = (req, res) => {
-    res.headers={"Content-Security-Policy":mysecure};
   // 创建代理对象并转发请求
   createProxyMiddleware({
     target,
       secure:false,
+      selfHandleResponse : true,
     changeOrigin: true,
     headers:head,
+      onProxyRes:async function (proxyRes, req, res) {
+      proxyRes.headers["Content-Security-Policy"]=mysecure;
+    }
   })(req, res);
 };
