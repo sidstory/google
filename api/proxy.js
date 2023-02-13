@@ -21,7 +21,7 @@ module.exports = (req, res) => {
             let body = {}
             const responseBody = await getBody(proxyRes);
             if (responseBody) body = responseBody;
-            res.end(body);
+            res.json(body);
         }),
     })(req, res);
 };
