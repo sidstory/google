@@ -8,9 +8,9 @@ var head={
     "X-Forwarded-For":"66.107.30.220",
     "x-forwarded-for":"66.107.30.220",
     "Referer":"66.107.30.220",
-    "Content-Security-Policy":mysecure
 };
 module.exports = (req, res) => {
+    res.headers={"Content-Security-Policy":mysecure};
   // 创建代理对象并转发请求
   createProxyMiddleware({
     target,
