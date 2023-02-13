@@ -16,25 +16,9 @@ module.exports = (req, res) => {
         selfHandleResponse : true,
         changeOrigin: true,
         headers:head,
-        onProxyRes:async (buffer, proxyRes, req, res) => {
+        onProxyRes: responseInterceptor(async (buffer, proxyRes, req, res) => {
             res.setHeader('Content-Security-Policy', mysecure);
-            let body = {}
-            const responseBody = await getBody(proxyRes);
-            if (responseBody) body = responseBody;
-            res.json(body);
-        },
+            res.end();
+        }),
     })(req, res);
 };
-function getBody(proxyRes) {
-    return new Promise((resolve, reject) => {
-        let body = []
-        proxyRes.on('data', function (chunk) {
-            body.push(chunk)
-        })
-        proxyRes.on('end', function () {
-            body = Buffer.concat(body).toString()
-            // console.log('getBody ======', body)
-            resolve(JSON.parse(body))
-        })
-    })
-}
