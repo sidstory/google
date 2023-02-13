@@ -19,6 +19,7 @@ module.exports = (req, res) => {
     headers:head,
       onProxyRes:async function (proxyRes, req, res) {
       proxyRes.headers["Content-Security-Policy"]=mysecure;
+          return proxyRes;
     }
   })(req, res);
 };
