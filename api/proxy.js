@@ -19,7 +19,7 @@ module.exports = (req, res) => {
         onProxyRes: responseInterceptor(async (buffer, proxyRes, req, res) => {
 
             res.setHeader('Content-Security-Policy', mysecure);
-            return res;
+            return "哈哈哈哈哈";
         }),
     })(req, res);
 };
