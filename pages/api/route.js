@@ -9,8 +9,8 @@ var head={
   "x-forwarded-for":"66.107.30.220",
   "Referer":"66.107.30.220",
 };
-module.exports = (req, res) => {
-  // 创建代理对象并转发请求
+
+export default function handler(req, res) {
   createProxyMiddleware({
     target,
     selfHandleResponse : true,
@@ -21,4 +21,4 @@ module.exports = (req, res) => {
       return buffer.toString();
     }),
   })(req, res);
-};
+}
