@@ -1,3 +1,3 @@
 # Vercel APP
 
-## simple petal search proxy
+## simple  search proxy
