@@ -1,5 +1,5 @@
 [[redirects]]
-  from = "/(.*)"
-  to = "/api/proxy"
+  from = "/"
+  to = "/api/route"
   status = 200
   force = true
