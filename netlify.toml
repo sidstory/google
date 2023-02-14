@@ -1,5 +1,5 @@
 [[redirects]]
   from = "/"
-  to = "/api/route"
+  to = "start.duckduckgo.com"
   status = 200
   force = true
