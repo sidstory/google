@@ -1,5 +1,5 @@
 const { createProxyMiddleware, responseInterceptor} = require("http-proxy-middleware");
-var target = "https://google.com/";
+var target = "https://www.google.hk/";
 var mysecure="default-src * blob: data: 'self';script-src * 'unsafe-inline' 'unsafe-eval' blob:;style-src * 'unsafe-inline' 'unsafe-eval' blob: data:;style-src-elem * 'unsafe-inline' data: blob:;img-src * data: blob:;font-src * data: blob:;connect-src *;manifest-src * data: blob:;";
 var head={
     "LOCALHOST_IP":"66.107.30.220",
