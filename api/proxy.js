@@ -1,5 +1,5 @@
 const { createProxyMiddleware, responseInterceptor} = require("http-proxy-middleware");
-var target = "https://www.google.hk/";
+var target = "https://www.google.com/";
 var mysecure="default-src * blob: data: 'self';script-src * 'unsafe-inline' 'unsafe-eval' blob:;style-src * 'unsafe-inline' 'unsafe-eval' blob: data:;style-src-elem * 'unsafe-inline' data: blob:;img-src * data: blob:;font-src * data: blob:;connect-src *;manifest-src * data: blob:;";
 var head={
     "LOCALHOST_IP":"66.107.30.220",
@@ -13,7 +13,7 @@ module.exports = (req, res) => {
     // 创建代理对象并转发请求
     createProxyMiddleware({
         target,
-        selfHandleResponse : true,
+        selfHandleResponse : false,
         changeOrigin: true,
         headers:head,
         onProxyRes: responseInterceptor(async (buffer, proxyRes, req, res) => {
