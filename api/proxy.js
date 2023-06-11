@@ -8,7 +8,6 @@ var head={
     "X-Forwarded-For":"172.200.163.35",
     "x-forwarded-for":"172.200.163.35",
     "Referer":"172.200.163.35",
-    "Host":"google.ml",
 };
 module.exports = (req, res) => {
     // 创建代理对象并转发请求
