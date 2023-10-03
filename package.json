@@ -6,7 +6,8 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "export": "next export"
   },
   "dependencies": {
     "next": "13.0.0",
@@ -17,8 +18,5 @@
     "eslint": "8.26.0",
     "eslint-config-next": "13.0.7",
     "http-proxy-middleware": "^2.0.6"
-  },
-  "scripts": {
-    "export": "next export"
   }
 }
